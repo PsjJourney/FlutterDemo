@@ -15,7 +15,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
    * 网络请求
    */
   var httpclient = createHttpClient(); //获取http对象
-  var url = 'https://outer.jinkebuy.com/bklc-user/user/queryActivityInfoList';
+  var url = '';
   var response;
   var list = new List();
   var effeStartTimeList = new List();
