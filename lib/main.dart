@@ -14,6 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new MaterialApp(
+      theme: new ThemeData(
+        primaryColor: Colors.white,
+      ),
       home: new MyHomePage(),
     );
   }
@@ -50,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage>
 
   @override
   Widget build(BuildContext context) {
+    final TextStyle textStyle = Theme.of(context).textTheme.display2;
     return new Scaffold(
         appBar: new AppBar(
           leading: new IconButton(
@@ -67,25 +71,42 @@ class _MyHomePageState extends State<MyHomePage>
           ],
         ),
         bottomNavigationBar: new Material(
-            color: Colors.blue,
-            child: new TabBar(controller: controller, tabs: <Tab>[
-              new Tab(
-                icon: new ImageIcon(new AssetImage('images/test.png')),
-                text: "精选",
-              ),
-              new Tab(
-                icon: new Icon(Icons.view_module, size: 30.0),
-                text: "投资",
-              ),
-              new Tab(
-                icon: new Icon(Icons.explore, size: 30.0),
-                text: "活动",
-              ),
-              new Tab(
-                icon: new Icon(Icons.bookmark, size: 30.0),
-                text: "账户",
-              ),
-            ])),
+            color: Colors.white,
+            child: new TabBar(
+                controller: controller,
+                unselectedLabelColor: Colors.grey,
+                labelColor: Colors.orange,
+                indicatorColor: Colors.orange,
+                tabs: <Tab>[
+                  new Tab(
+                    icon: new ImageIcon(
+                      new AssetImage('images/main_menu_recommend_normal.png'),
+                      size: 18.0,
+                    ),
+                    text: "精选",
+                  ),
+                  new Tab(
+                    icon: new ImageIcon(
+                      new AssetImage('images/main_menu_investment_normal.png'),
+                      size: 18.0,
+                    ),
+                    text: '投资',
+                  ),
+                  new Tab(
+                    icon: new ImageIcon(
+                      new AssetImage('images/main_menu_my_normal.png'),
+                      size: 18.0,
+                    ),
+                    text: "活动",
+                  ),
+                  new Tab(
+                    icon: new ImageIcon(
+                      new AssetImage('images/main_menu_find_normal.png'),
+                      size: 18.0,
+                    ),
+                    text: "账户",
+                  ),
+                ])),
         body: new TabBarView(controller: controller, children: <Widget>[
           new HomeFeedScreen.HomeFeedScreen(),
           new SourceLibraryScreen.SourceLibraryScreen(),

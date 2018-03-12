@@ -31,6 +31,11 @@ flutter:
   assets:
        - images/test.png
        - images/test1.jpg
+       - images/main_menu_recommend_normal.png
+       - images/main_menu_investment_normal.png
+       - images/main_menu_my_normal.png
+       - images/main_menu_find_normal.png
+
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
