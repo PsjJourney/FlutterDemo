@@ -61,48 +61,40 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           new Expanded(
               child: new ListView.builder(
                   itemCount: list.length,
-                  padding: new EdgeInsets.all(0.0),
+                  padding: new EdgeInsets.all(8.0),
                   itemBuilder: (BuildContext context, int index) {
                     return new Card(
                       elevation: 0.0,
-                      child: new Padding(
-                        padding: new EdgeInsets.all(10.0),
-                        child: new Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            new Container(
-                              decoration: new BoxDecoration(
-                                  border: new Border.all(
-                                      width: 1.0, color: Colors.black),
-                                  borderRadius: const BorderRadius.all(
-                                      const Radius.circular(18.0))),
-                              child: new Image.network(
-                                list[index]['activityImgUrl'],
-                              ),
+                      child: new Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          new Container(
+                            child: new Image.network(
+                              list[index]['activityImgUrl'],
+                              fit: BoxFit.cover,
                             ),
-                            /* new Card(
-                              elevation: 2.0,
-                              child: new Image.network(
-                                list[index]['activityImgUrl'],
-                              ),
-                            ),*/
-                            new Text(
+                          ),
+                          new Padding(
+                            padding: new EdgeInsets.only(
+                                top: 4.0, left: 4.0, bottom: 4.0),
+                            child: new Text(
                               list[index]['activityContent'],
                               style: new TextStyle(
                                 fontSize: 18.0,
                               ),
                             ),
-                            new Container(
-                              child: new Text(
-                                timeList[index],
-                                style: new TextStyle(
-                                    fontStyle: FontStyle.italic,
-                                    color: Colors.grey),
-                              ),
-                              margin: const EdgeInsets.only(top: 10.0),
-                            )
-                          ],
-                        ),
+                          ),
+                          new Padding(
+                            padding:
+                                const EdgeInsets.only(left: 4.0, bottom: 4.0),
+                            child: new Text(
+                              timeList[index],
+                              style: new TextStyle(
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.grey),
+                            ),
+                          )
+                        ],
                       ),
                     );
                   }))
